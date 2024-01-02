@@ -62,7 +62,8 @@ public class AgentMovement : MonoBehaviour
             return;
         }
         _isJumping = true;
-        _rigid.AddForce((Vector3.up + transform.position) * _jumpPower, ForceMode.Impulse);
+        _rigid.AddForce((Vector3.up + transform.forward) * _jumpPower, ForceMode.Impulse);
+
         Action action = () => _isJumping = false;
 
         StopCoroutine(nameof(WaitUntilGround));

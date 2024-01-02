@@ -22,7 +22,7 @@ public class AgentInput : MonoBehaviour
 
     private void Move()
     {
-        dir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        dir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         OnMovementInput?.Invoke(dir);
     }
 
